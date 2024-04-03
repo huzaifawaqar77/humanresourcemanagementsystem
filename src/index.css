@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#f5f5f5] w-screen;
+  font-family: "Poppins";
+  overflow: hidden;
+}
+input,
+textarea {
+  @apply block w-full rounded-md border border-slate-300 p-2 bg-slate-100;
+}
+.sidebar {
+  @apply z-20 h-screen text-white;
+  background: #bf6d39;
+  background: linear-gradient(135deg, #fc6173, #ff902f);
+}
+
+.sidebar > ul {
+  @apply mt-8 list-none;
+}
+
+.sidebar ul div {
+  @apply p-4 font-semibold flex items-center gap-2  cursor-pointer;
+}
+
+.sidebar-item {
+  @apply p-2 hover:text-black hover:bg-white hover:rounded-ss-full hover:rounded-es-full;
+}
+
+.topbar {
+  @apply p-2 bg-[#f5f5f5] flex items-center justify-between sticky top-0 right-0 z-10 border-b border-b-2;
+  position: sticky; /* Ensuring position is sticky */
+  top: 0; /* Sticks to the top */
+  z-index: 10; /* Higher z-index */
+}
+
+.chart-container {
+  /* This makes it responsive and applies a uniform padding and shadow */
+  @apply p-5 rounded-lg bg-gray-50 shadow-md;
+  /* Example fixed height - adjust as necessary or make it responsive */
+  @apply h-auto;
+}
+
+.login-form {
+  background: url("../public//login-image.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* .table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+} */
+
+.success {
+  margin-top: 8px;
+  width: fit-content;
+  color: black;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-color: #badbcc;
+}
+
+.error {
+  margin-top: 8px;
+  width: fit-content;
+  color: black;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #f8d7da;
+  color: #842029;
+  border-color: #f5c2c7;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures the rounded corners are visible */
+}
+
+tbody > tr {
+  @apply text-base font-medium text-black;
+}
+
+tbody > tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light grey */
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #ffffff; /* White */
+}
+
+table {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.overlap-children > *:not(:first-child) {
+  margin-left: -8px; /* Adjust this value based on your design needs */
+}
+
+/* Calendar Header Background */
+.react-datepicker__header {
+  @apply bg-primary;
+}
+
+/* Header Text Color */
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: white !important;
+}
+
+/* Rounded Corners for Days */
+.react-datepicker__day {
+  border-radius: 9999px !important; /* TailwindCSS utility class for fully rounded corners translated to CSS */
+}
+
+/* Background for Days in Selected Range */
+.react-datepicker__day--in-range,
+.react-datepicker__day--selected {
+  @apply bg-primary text-white;
+}
+
+/* Increase the overall size of the calendar */
+.react-datepicker {
+  font-size: 1.25rem; /* Adjust base font size, affects overall dimensions */
+}
+
+/* Adjust the header size */
+.react-datepicker__header {
+  padding-top: 1rem; /* Larger header padding */
+  padding-bottom: 1rem; /* Larger header padding */
+}
+
+/* Adjust day size */
+.react-datepicker__day,
+.react-datepicker__day-name {
+  margin: 0.4rem; /* More space around each day */
+  width: 2.5rem; /* Wider day cells */
+  line-height: 2.5rem; /* Taller day cells for a square look */
+}
+
+/* Adjust month-year dropdown size */
+.react-datepicker__month-select,
+.react-datepicker__year-select {
+  padding: 0.5rem; /* Larger dropdowns */
+  font-size: 1rem; /* Larger text in dropdowns */
+}
+
+/* Adjust the navigation arrows size */
+.react-datepicker__navigation {
+  top: 22px; /* Adjust based on new header size */
+  width: 34px; /* Larger arrow icon */
+  height: 34px; /* Larger arrow icon */
+  border-width: 0.45rem; /* Thicker arrow */
+}
+
+/* Specific adjustments for the navigation icons */
+.react-datepicker__navigation--previous {
+  border-right-color: #3490dc; /* Example: use your primary color here */
+}
+.react-datepicker__navigation--next {
+  border-left-color: #3490dc; /* Example: use your primary color here */
+}
+
+/* Small screen adjustments */
+@media (max-width: 600px) {
+  .react-datepicker {
+    font-size: 1rem; /* Adjust base font size for small screens */
+  }
+
+  .react-datepicker__day,
+  .react-datepicker__day-name {
+    margin: 0.2rem; /* Less space around each day for small screens */
+    width: 2rem; /* Narrower day cells for small screens */
+    line-height: 2rem; /* Shorter day cells for small screens */
+  }
+}
+
+/* ToggleSwitch.css */
+.toggle-switch {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.toggle-option {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: lightgray;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-option.active {
+  background-color: dodgerblue;
+  color: white;
+}
+.toggle-option.inactive {
+  background-color: red;
+  color: white;
+}
+
+.toggle-option.completed {
+  background-color: green;
+  color: white;
+}
